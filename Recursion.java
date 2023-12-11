@@ -46,7 +46,7 @@ public class Recursion {
 
   // 3.0 Find the sum of the digits in a positive integer 
   public int SumPositiveDigits(int n) {
-    if(n < 10) return n;
+    if(n == 0 || n < 0) return 0;
     return n % 10 + (SumPositiveDigits(n / 10));
   }
 
