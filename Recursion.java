@@ -7,7 +7,7 @@ public class Recursion {
     System.out.println(Fibonacci);
     recursion.printFibonacciSequence(9);
     System.out.println();
-    int SumPositiveDigits = recursion.SumPositiveDigits(123);
+    int SumPositiveDigits = recursion.SumDigitsOfPositiveInteger(123);
     System.out.println("The sum of position integers is " + SumPositiveDigits);
   }
 
@@ -45,9 +45,9 @@ public class Recursion {
   }
 
   // 3.0 Find the sum of the digits in a positive integer 
-  public int SumPositiveDigits(int n) {
+  public int SumDigitsOfPositiveInteger(int n) {
     if(n == 0 || n < 0) return 0;
-    return n % 10 + (SumPositiveDigits(n / 10));
+    return n % 10 + (SumDigitsOfPositiveInteger(n / 10));
   }
 
   // SumPositiveDigits(123)
