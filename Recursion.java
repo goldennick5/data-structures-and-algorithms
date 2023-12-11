@@ -6,6 +6,9 @@ public class Recursion {
     int Fibonacci = recursion.Fibonacci(4);
     System.out.println(Fibonacci);
     recursion.printFibonacciSequence(9);
+    System.out.println();
+    int SumPositiveDigits = recursion.SumPositiveDigits(123);
+    System.out.println("The sum of position integers is " + SumPositiveDigits);
   }
 
   // 1.0 Factorial Problem
@@ -39,7 +42,16 @@ public class Recursion {
     //                 2  Fibonacci(3)         <----->       Fibonacci(2)  1
     //      1 + 1  Fibonacci(2) + Fibonacci(1) <-----> Fibonacci(1) + Fibonacci(0)  1
     //   1  Fibonacci(1) + Fibonacci(0)
-
-    //test
   }
+
+  // 3.0 Find the sum of the digits in a positive integer 
+  public int SumPositiveDigits(int n) {
+    if(n < 10) return n;
+    return n % 10 + (SumPositiveDigits(n / 10));
+  }
+
+  // SumPositiveDigits(123)
+  // 123 % 10 + (SumPositiveDigits(123 / 10)) 3 + 3 = 6
+  // 12 % 10 + (SumPositiveDigits(12 / 10)) 1 + 2 = 3
+  // 1 % 10 + (SumPositiveDigits(1 / 10)) 1 + 1 = 2
 }
