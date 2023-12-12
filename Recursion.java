@@ -9,6 +9,8 @@ public class Recursion {
     System.out.println();
     int SumPositiveDigits = recursion.SumDigitsOfPositiveInteger(123);
     System.out.println("The sum of position integers is " + SumPositiveDigits);
+    int PowerOfNumber = recursion.PowerOfNumber(5, 4);
+    System.out.println(PowerOfNumber);
   }
 
   // 1.0 Factorial Problem
@@ -54,4 +56,10 @@ public class Recursion {
   // 123 % 10 + (SumPositiveDigits(123 / 10)) 3 + 3 = 6
   // 12 % 10 + (SumPositiveDigits(12 / 10)) 1 + 2 = 3
   // 1 % 10 + (SumPositiveDigits(1 / 10)) 1 + 1 = 2
+
+  //4.0 Find the power of a number
+  public int PowerOfNumber(int num, int power) {
+    if(power == 0) return 1;
+    return num * PowerOfNumber(num, power - 1);
+  }
 }
