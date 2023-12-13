@@ -11,6 +11,10 @@ public class Recursion {
     System.out.println("The sum of position integers is " + SumPositiveDigits);
     int PowerOfNumber = recursion.PowerOfNumber(5, 4);
     System.out.println(PowerOfNumber);
+    int gcd = recursion.gcd(12, 8);
+    System.out.println(gcd);
+    int decimalToBinary = recursion.convertDecToBin(18);
+    System.out.println(decimalToBinary);
   }
 
   // 1.0 Factorial Problem
@@ -62,5 +66,19 @@ public class Recursion {
     if(power == 0) return 1;
     if(power < 0) return -1;
     return num * PowerOfNumber(num, power - 1);
+  }
+
+  //5.0 Finding GCD using Eucleadian algorithm
+  public int gcd(int num_one, int num_two) {
+    if(num_two != 0) return gcd(num_two, num_one % num_two);
+    if(num_two == 0) return num_one;
+    else return -1;
+  }
+
+  //6.0 Converting decimal to binary
+  public int convertDecToBin(int number) {
+    if(number < 0) return -1;
+    if(number == 0) return 0;
+    return number % 2 + 10 * convertDecToBin(number / 2);
   }
 }
