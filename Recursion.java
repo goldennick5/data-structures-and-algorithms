@@ -60,6 +60,7 @@ public class Recursion {
   //4.0 Find the power of a number
   public int PowerOfNumber(int num, int power) {
     if(power == 0) return 1;
+    if(power < 0) return -1;
     return num * PowerOfNumber(num, power - 1);
   }
 }
